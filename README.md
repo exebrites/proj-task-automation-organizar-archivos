@@ -21,13 +21,13 @@ mejorando la productividad y minimizando errores.
 - [Licencia](#licencia) -->
 ## Características
 - Automatiza tareas como la organizacion y clasificacion de archivos con extension .pdf, .jpg, .jpeg y .png
-<!-- - Compatible con sistemas [Windows/Linux/macOS].
-- Registro de logs para seguimiento.
+ - Compatible con sistemas [Linux].
+<!--- Registro de logs para seguimiento.
 - Configurable mediante un archivo `.env`. -->
 ## Requisitos Previos
 - Python 3.11.2
 - Módulos: `os`, `shutil`.
-<!-- - Sistema operativo compatible: [detalla]. -->
+- Sistema operativo compatible: [Debian12].
 ## Instalación
 1. Clona este repositorio:
    ```bash
