@@ -22,7 +22,10 @@ if not os.path.exists(ruta_carpeta):
     print("La carpeta no existe. Por favor, ingrese una ruta válida.")
     exit()
 
-nombre_dir ='PDF'
+# Pedir al usuario que ingrese el nombre de la carpeta de PDF
+nombre_carpeta_pdf = input("Ingrese el nombre de la carpeta donde quiere guardar los archivos PDF: ")
+
+
 # '/home/exe/Descargas'
 os.chdir(ruta_carpeta)
 # print(os.getcwd())
@@ -30,10 +33,10 @@ os.chdir(ruta_carpeta)
 
 lista_archivos = os.listdir()
 #carperta de pdfs verificar la existencia
-existe_dir = os.path.exists(nombre_dir)
+existe_dir = os.path.exists(nombre_carpeta_pdf)
 if not existe_dir: 
         print('Creando carperta pdf')
-        os.mkdir(nombre_dir) 
+        os.mkdir(nombre_carpeta_pdf) 
 
 long = len(lista_archivos)
 # print(long)
