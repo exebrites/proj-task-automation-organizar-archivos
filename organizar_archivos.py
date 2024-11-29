@@ -13,8 +13,18 @@ import os
 import shutil
 
 print('Ejecutando script...')
+
+# Pedir al usuario que ingrese la ruta de la carpeta a organizar
+ruta_carpeta = input("Ingrese la ruta de la carpeta que quiere organizar: ")
+
+# Verificar si la carpeta existe
+if not os.path.exists(ruta_carpeta):
+    print("La carpeta no existe. Por favor, ingrese una ruta válida.")
+    exit()
+
 nombre_dir ='PDF'
-os.chdir('/home/exe/Descargas')
+# '/home/exe/Descargas'
+os.chdir(ruta_carpeta)
 # print(os.getcwd())
 # print(os.system("ls"))
 
