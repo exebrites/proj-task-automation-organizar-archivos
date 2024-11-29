@@ -26,7 +26,7 @@ mejorando la productividad y minimizando errores.
 - Configurable mediante un archivo `.env`. -->
 ## Requisitos Previos
 - Python 3.11.2
-- Módulos: `so`, `shutil`.
+- Módulos: `os`, `shutil`.
 <!-- - Sistema operativo compatible: [detalla]. -->
 ## Instalación
 1. Clona este repositorio:

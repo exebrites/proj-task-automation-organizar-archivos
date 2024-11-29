@@ -14,8 +14,29 @@ import shutil
 
 print('Ejecutando script...')
 
+
+# Pedir al usuario que seleccione una carpeta desde un menú
+print("Seleccione una carpeta para organizar:")
+print("1. Descargas")
+print("2. Documentos")
+print("3. Imágenes")
+print("4. Otra carpeta")
+
+opcion = input("Ingrese el número de la opción: ")
+
+if opcion == "1":
+    ruta_carpeta = "/home/"+os.environ['USER']+"/Descargas"
+elif opcion == "2":
+    ruta_carpeta = "/home/"+os.environ['USER']+"/Documentos"
+elif opcion == "3":
+    ruta_carpeta = "/home/"+os.environ['USER']+"/Imágenes"
+elif opcion == "4":
+    ruta_carpeta = input("Ingrese la ruta de la carpeta: ")
+else:
+    print("Opción inválida. Por favor, ingrese un número válido.")
+    exit()
 # Pedir al usuario que ingrese la ruta de la carpeta a organizar
-ruta_carpeta = input("Ingrese la ruta de la carpeta que quiere organizar: ")
+# ruta_carpeta = input("Ingrese la ruta de la carpeta que quiere organizar: ")
 
 # Verificar si la carpeta existe
 if not os.path.exists(ruta_carpeta):
