@@ -35,8 +35,6 @@ elif opcion == "4":
 else:
     print("Opción inválida. Por favor, ingrese un número válido.")
     exit()
-# Pedir al usuario que ingrese la ruta de la carpeta a organizar
-# ruta_carpeta = input("Ingrese la ruta de la carpeta que quiere organizar: ")
 
 # Verificar si la carpeta existe
 if not os.path.exists(ruta_carpeta):
@@ -44,34 +42,43 @@ if not os.path.exists(ruta_carpeta):
     exit()
 
 # Pedir al usuario que ingrese el nombre de la carpeta de PDF
-nombre_carpeta_pdf = input("Ingrese el nombre de la carpeta donde quiere guardar los archivos PDF: ")
+nombre_carpeta_pdf = input("Ingrese el nombre de la carpeta donde quiere guardar los archivos: ")
 
-
-# '/home/exe/Descargas'
+#mover a ruta actual y listar archivos
 os.chdir(ruta_carpeta)
-# print(os.getcwd())
-# print(os.system("ls"))
-
 lista_archivos = os.listdir()
+
 #carperta de pdfs verificar la existencia
 existe_dir = os.path.exists(nombre_carpeta_pdf)
 if not existe_dir: 
-        print('Creando carperta pdf')
-        os.mkdir(nombre_carpeta_pdf) 
-
+        print('Creando carperta y subcarpetas...')
+        # 1. creo directorio
+        os.mkdir(nombre_carpeta_pdf)
+        # 2. me muevo dentro del directorio creado
+        directorio_actual = os.getcwd()
+        # print(directorio_actual)
+        directorio_hijo = os.path.join(directorio_actual, nombre_carpeta_pdf)
+        # print(directorio_hijo)
+        os.chdir(directorio_hijo)
+        # 3. creo la sub carperta pdf y img
+        os.mkdir('pdf')
+        os.mkdir('img')
+        # 4. me muevo un directorio atras
+        os.chdir(ruta_carpeta)
 long = len(lista_archivos)
-# print(long)
 print('Recorriendo archivos...')
 for i in range(long):
-    # print(lista_archivos[i])
-  
     nombre_ext = os.path.splitext(lista_archivos[i])
-    # print(nombre_ext[1])
-    #verificar extension
+   
+    #verificar extension y mover archivo
+    print('Moviendo archivos...')
     if nombre_ext[1] == '.pdf':
-            # print("es un pdf")
-            print('Moviendo archivos...')
-            shutil.move(lista_archivos[i],'PDF/'+lista_archivos[i])
-    #mover archivo a carpeta PDF
-
+            shutil.move(lista_archivos[i],nombre_carpeta_pdf+'/pdf/'+lista_archivos[i])
+    elif nombre_ext[1] == '.jpg':
+            shutil.move(lista_archivos[i],nombre_carpeta_pdf+'/img/'+lista_archivos[i])
+    elif nombre_ext[1] == '.jpeg':
+            shutil.move(lista_archivos[i],nombre_carpeta_pdf+'/img/'+lista_archivos[i])
+    elif nombre_ext[1] == '.png':
+            shutil.move(lista_archivos[i],nombre_carpeta_pdf+'/img/'+lista_archivos[i])
+     
 print('Script Finalizado!')

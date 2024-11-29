@@ -20,7 +20,7 @@ mejorando la productividad y minimizando errores.
 - [Contribución](#contribución)
 - [Licencia](#licencia) -->
 ## Características
-- Automatiza tareas como la organizacion y clasificacion de archivos con extension .pdf
+- Automatiza tareas como la organizacion y clasificacion de archivos con extension .pdf, .jpg, .jpeg y .png
 <!-- - Compatible con sistemas [Windows/Linux/macOS].
 - Registro de logs para seguimiento.
 - Configurable mediante un archivo `.env`. -->
@@ -35,6 +35,7 @@ mejorando la productividad y minimizando errores.
 2. cd proj-task-automation-organizar-archivos
 3. pip install -r requirements.txt
 4. python organizar_archivos.py
+
 
 <!-- #### 7. **Uso**  
 Explica cómo ejecutar el script, parámetros opcionales, y ejemplos.  
